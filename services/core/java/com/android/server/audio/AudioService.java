@@ -597,6 +597,17 @@ public class AudioService extends IAudioService.Stub {
     // If absolute volume is supported in AVRCP device
     private boolean mAvrcpAbsVolSupported = false;
 
+    // First step percentage in Bluetooth Absolute Volume (1-50)
+    private final double mAvrcpAbsVolFirstStepPct;
+    private static final int ABS_VOL_FIRST_STEP_MIN = 1;
+    private static final int ABS_VOL_FIRST_STEP_MAX = 50;
+    private static final int ABS_VOL_FIRST_STEP_DEFAULT = 50;
+    // Step count for Bluetooth Absolute Volume (2-10)
+    private final int mAvrcpAbsVolSteps;
+    private static final int ABS_VOL_STEP_COUNT_MIN = 2;
+    private static final int ABS_VOL_STEP_COUNT_MAX = 10;
+    private static final int ABS_VOL_STEP_COUNT_DEFAULT = 2;
+    
     private boolean mLinkNotificationWithVolume;
     private final boolean mVoiceCapable;
     private static Long mLastDeviceConnectMsgTime = new Long(0);
